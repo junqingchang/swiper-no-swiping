@@ -3,7 +3,7 @@ SUTD x NLB project for an upcoming exhibition
 
 Application for users to find out a suitable path to take at the exhibition
 
-![alt text](https://github.com/junqingchang/swiper-no-swiping/blob/master/Screenshots/ss1.JPG)          
+![alt text](https://github.com/junqingchang/swiper-no-swiping/blob/master/Screenshots/ss1.JPG)     
 ![alt text](https://github.com/junqingchang/swiper-no-swiping/blob/master/Screenshots/ss2.JPG)
 ![alt text](https://github.com/junqingchang/swiper-no-swiping/blob/master/Screenshots/ss3.JPG)
 ## Getting Started
