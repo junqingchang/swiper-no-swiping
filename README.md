@@ -3,9 +3,9 @@ SUTD x NLB project for an upcoming exhibition
 
 Application for users to find out a suitable path to take at the exhibition
 
-![alt text](https://github.com/junqingchang/swiper-no-swiping/blob/master/Screenshots/ss1.JPG =100x20)
-![alt text](https://github.com/junqingchang/swiper-no-swiping/blob/master/Screenshots/ss2.JPG =100x20)
-![alt text](https://github.com/junqingchang/swiper-no-swiping/blob/master/Screenshots/ss3.JPG =100x20)
+![alt text](https://github.com/junqingchang/swiper-no-swiping/blob/master/Screenshots/ss1.JPG){:height="36px" width="36px"}
+![alt text](https://github.com/junqingchang/swiper-no-swiping/blob/master/Screenshots/ss2.JPG){:height="36px" width="36px"}
+![alt text](https://github.com/junqingchang/swiper-no-swiping/blob/master/Screenshots/ss3.JPG){:height="36px" width="36px"}
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
