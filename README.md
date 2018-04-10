@@ -3,6 +3,9 @@ SUTD x NLB project for an upcoming exhibition
 
 Application for users to find out a suitable path to take at the exhibition
 
+![alt text](Screenshots/ss1.jpg)
+![alt text](Screenshots/ss2.jpg)
+![alt text](Screenshots/ss3.jpg)
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
