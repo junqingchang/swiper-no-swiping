@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Selling Dreams</string>
+    <string name="invitation">Find out about what you like about old prints</string>
+    <string name="title_activity_results">ResultsActivity</string>
+</resources>
