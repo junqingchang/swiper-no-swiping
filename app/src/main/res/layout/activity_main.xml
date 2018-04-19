@@ -16,7 +16,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="Swipe left or right" />
+            android:text="Swipe left or right depending which you like!" />
 
         <TextView
             android:id="@+id/textView2"
@@ -26,11 +26,25 @@
             android:text="Large Text"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
-        <ImageView
-            android:id="@+id/oldprint"
-            android:layout_width="wrap_content"
-            android:layout_height="322dp"
-            android:src="@drawable/sample" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/oldprint1"
+                android:layout_width="190dp"
+                android:layout_height="322dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:src="@drawable/sample" />
+
+            <ImageView
+                android:id="@+id/oldprint2"
+                android:layout_width="190dp"
+                android:layout_height="322dp"
+                android:src="@drawable/sample" />
+        </RelativeLayout>
+
     </LinearLayout>
 
 </android.support.v7.widget.CardView>

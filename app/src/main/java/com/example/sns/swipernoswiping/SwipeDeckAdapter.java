@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
@@ -13,10 +14,14 @@ import java.util.List;
 public class SwipeDeckAdapter extends BaseAdapter {
 
     private List<String> data;
+    private List<Integer> imageData1;
+    private List<Integer> imageData2;
     private Context context;
 
-    public SwipeDeckAdapter(List<String> data, Context context) {
+    public SwipeDeckAdapter(List<String> data, List<Integer> imageData1, List<Integer> imageData2, Context context) {
         this.data = data;
+        this.imageData1 = imageData1;
+        this.imageData2 = imageData2;
         this.context = context;
     }
 
@@ -45,6 +50,10 @@ public class SwipeDeckAdapter extends BaseAdapter {
             v = inflater.inflate(R.layout.activity_main, parent, false);
         }
         ((TextView) v.findViewById(R.id.textView2)).setText(data.get(position));
+
+        //TODO: turn this on when you have image for the prompts
+//        ((ImageView) v.findViewById(R.id.oldprint1)).setImageResource(imageData1.get(position));
+//        ((ImageView) v.findViewById(R.id.oldprint2)).setImageResource(imageData2.get(position));
 
         v.setOnClickListener(new View.OnClickListener() {
             @Override
