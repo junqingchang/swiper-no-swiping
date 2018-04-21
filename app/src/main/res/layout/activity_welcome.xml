@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="199dp"
+        android:layout_marginBottom="204dp"
         android:backgroundTint="#8D6E63"
         android:text="Let's Go" />
 
@@ -31,5 +31,14 @@
         android:layout_centerHorizontal="true"
         android:contentDescription="NLBLOGO"
         android:src="@drawable/sutdxnlb" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/button"
+        android:layout_marginEnd="44dp"
+        android:text="Button" />
 
 </RelativeLayout>

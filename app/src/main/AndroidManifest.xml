@@ -18,6 +18,9 @@
         </activity>
         <activity android:name=".MainActivity" />
         <activity android:name=".ResultActivity"></activity>
+        <activity android:name=".SimpleViewFlipActivity"/>
+        <activity android:name=".RecyclerViewFlipActivity"/>
+
     </application>
 
 </manifest>

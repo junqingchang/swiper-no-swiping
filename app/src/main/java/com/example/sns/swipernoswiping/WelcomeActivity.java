@@ -11,6 +11,7 @@ import android.widget.Button;
 public class WelcomeActivity extends AppCompatActivity {
 
     Button nextButton;
+    Button goButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +19,7 @@ public class WelcomeActivity extends AppCompatActivity {
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_welcome);
+
         nextButton = findViewById(R.id.nextButton);
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -26,8 +28,18 @@ public class WelcomeActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
     }
 
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Intent itn = new Intent(this, SimpleViewFlipActivity.class);
+        startActivity(itn);
 
+
+
+    }
 }
