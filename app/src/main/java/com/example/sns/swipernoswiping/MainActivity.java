@@ -33,53 +33,52 @@ public class MainActivity extends AppCompatActivity {
 
 
         //TODO: Change the "Prompt X" to header we want
-        testData.add("Prompt 1");
+        testData.add("How do you shop?");
 
         //TODO: Turn this on when you have image for the prompts, and change respective image left image and right image name
-//        imageId1.add(R.drawable.<LEFTIMAGENAME>);
-//        imageId2.add(R.drawable.<RIGHTIMAGENAME>);
+        imageId1.add(R.drawable.br11);
+        imageId2.add(R.drawable.qs11);
 
         testData.add("Prompt 2");
 
         //TODO: Turn this on when you have image for the prompts, and change respective image left image and right image name
-//        imageId1.add(R.drawable.<LEFTIMAGENAME>);
-//        imageId2.add(R.drawable.<RIGHTIMAGENAME>);
-
+        imageId1.add(R.drawable.br11);
+        imageId2.add(R.drawable.qs11);
         testData.add("Prompt 3");
 
         //TODO: Turn this on when you have image for the prompts, and change respective image left image and right image name
-//        imageId1.add(R.drawable.<LEFTIMAGENAME>);
-//        imageId2.add(R.drawable.<RIGHTIMAGENAME>);
+        imageId1.add(R.drawable.br11);
+        imageId2.add(R.drawable.qs11);
 
         testData.add("Prompt 4");
 
         //TODO: Turn this on when you have image for the prompts, and change respective image left image and right image name
-//        imageId1.add(R.drawable.<LEFTIMAGENAME>);
-//        imageId2.add(R.drawable.<RIGHTIMAGENAME>);
+        imageId1.add(R.drawable.br11);
+        imageId2.add(R.drawable.qs11);
 
         testData.add("Prompt 5");
 
         //TODO: Turn this on when you have image for the prompts, and change respective image left image and right image name
-//        imageId1.add(R.drawable.<LEFTIMAGENAME>);
-//        imageId2.add(R.drawable.<RIGHTIMAGENAME>);
+        imageId1.add(R.drawable.br11);
+        imageId2.add(R.drawable.qs11);
 
         testData.add("Prompt 6");
 
         //TODO: Turn this on when you have image for the prompts, and change respective image left image and right image name
-//        imageId1.add(R.drawable.<LEFTIMAGENAME>);
-//        imageId2.add(R.drawable.<RIGHTIMAGENAME>);
+        imageId1.add(R.drawable.br11);
+        imageId2.add(R.drawable.qs11);
 
         testData.add("Prompt 7");
 
         //TODO: Turn this on when you have image for the prompts, and change respective image left image and right image name
-//        imageId1.add(R.drawable.<LEFTIMAGENAME>);
-//        imageId2.add(R.drawable.<RIGHTIMAGENAME>);
+        imageId1.add(R.drawable.br11);
+        imageId2.add(R.drawable.qs11);
 
         testData.add("Prompt 8");
 
         //TODO: Turn this on when you have image for the prompts, and change respective image left image and right image name
-//        imageId1.add(R.drawable.<LEFTIMAGENAME>);
-//        imageId2.add(R.drawable.<RIGHTIMAGENAME>);
+        imageId1.add(R.drawable.br11);
+        imageId2.add(R.drawable.qs11);
 
 
 
