@@ -52,8 +52,9 @@ public class SwipeDeckAdapter extends BaseAdapter {
         ((TextView) v.findViewById(R.id.textView2)).setText(data.get(position));
 
         //TODO: turn this on when you have image for the prompts
-//        ((ImageView) v.findViewById(R.id.oldprint1)).setImageResource(imageData1.get(position));
-//        ((ImageView) v.findViewById(R.id.oldprint2)).setImageResource(imageData2.get(position));
+        Log.i("Norman","Trying to set images");
+        ((ImageView) v.findViewById(R.id.oldprint1)).setImageResource(imageData1.get(position));
+        ((ImageView) v.findViewById(R.id.oldprint2)).setImageResource(imageData2.get(position));
 
         v.setOnClickListener(new View.OnClickListener() {
             @Override
