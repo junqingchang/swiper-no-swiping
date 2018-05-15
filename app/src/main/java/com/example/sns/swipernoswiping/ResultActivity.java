@@ -7,10 +7,12 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class ResultActivity extends AppCompatActivity {
 
     Button restartBtn;
+    TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,9 +23,11 @@ public class ResultActivity extends AppCompatActivity {
 
         Intent in = getIntent();
         Bundle b = in.getExtras();
+        textView = findViewById(R.id.resultsTextView);
 
         if (b!=null){
             String type = (String) b.get("type");
+            textView.setText(type);
             //TODO: Decide what to do with type
         }
         restartBtn = findViewById(R.id.restartBtn);

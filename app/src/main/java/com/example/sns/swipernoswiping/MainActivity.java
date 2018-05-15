@@ -13,11 +13,17 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
     SwipeDeck cardStack;
 
-    //TODO: Backend calculations
-    private String firstPrompt  = null;
-    private String secondPrompt = null;
-    private String thirdPrompt = null;
-    private int points = 0;
+    final private String stateBrowser = "br";
+    final private String stateQuickShopper = "qs";
+    final private String stateCarefulShopper = "cs";
+
+    int ss = 0;
+    int qd = 0;
+    int pe = 0;
+    int oa = 0;
+    int hs = 0;
+    int dd = 0;
+    private String state = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,54 +37,13 @@ public class MainActivity extends AppCompatActivity {
         final ArrayList<Integer> imageId1 = new ArrayList<>();
         final ArrayList<Integer> imageId2 = new ArrayList<>();
 
-
-        //TODO: Change the "Prompt X" to header we want
-        testData.add("How do you shop?");
-
-        //TODO: Turn this on when you have image for the prompts, and change respective image left image and right image name
+        testData.add(getResources().getString(R.string.question11));
         imageId1.add(R.drawable.br11);
         imageId2.add(R.drawable.qs11);
 
-        testData.add("Prompt 2");
+        //TODO do the random selection 
 
-        //TODO: Turn this on when you have image for the prompts, and change respective image left image and right image name
-        imageId1.add(R.drawable.br11);
-        imageId2.add(R.drawable.qs11);
-        testData.add("Prompt 3");
 
-        //TODO: Turn this on when you have image for the prompts, and change respective image left image and right image name
-        imageId1.add(R.drawable.br11);
-        imageId2.add(R.drawable.qs11);
-
-        testData.add("Prompt 4");
-
-        //TODO: Turn this on when you have image for the prompts, and change respective image left image and right image name
-        imageId1.add(R.drawable.br11);
-        imageId2.add(R.drawable.qs11);
-
-        testData.add("Prompt 5");
-
-        //TODO: Turn this on when you have image for the prompts, and change respective image left image and right image name
-        imageId1.add(R.drawable.br11);
-        imageId2.add(R.drawable.qs11);
-
-        testData.add("Prompt 6");
-
-        //TODO: Turn this on when you have image for the prompts, and change respective image left image and right image name
-        imageId1.add(R.drawable.br11);
-        imageId2.add(R.drawable.qs11);
-
-        testData.add("Prompt 7");
-
-        //TODO: Turn this on when you have image for the prompts, and change respective image left image and right image name
-        imageId1.add(R.drawable.br11);
-        imageId2.add(R.drawable.qs11);
-
-        testData.add("Prompt 8");
-
-        //TODO: Turn this on when you have image for the prompts, and change respective image left image and right image name
-        imageId1.add(R.drawable.br11);
-        imageId2.add(R.drawable.qs11);
 
 
 
@@ -92,32 +57,47 @@ public class MainActivity extends AppCompatActivity {
 
                 //TODO: points system
                 if(position == 0){
-                    firstPrompt = "left";
+
+                    state = stateBrowser;
+                    testData.add(1,getResources().getString(R.string.question21));
+                    imageId1.add(1,R.drawable.br21);
+                    imageId2.add(1,R.drawable.cs21);
+                    adapter.notifyDataSetChanged();
+
+                    Log.i("Norman","position" + position + "left");
                 }
                 if(position == 1){
-                    secondPrompt = "left";
+
+                    if(state.equals(stateBrowser)){
+                        testData.add(getResources().getString(R.string.question41));
+                        imageId1.add(R.drawable.ss1);
+                        imageId2.add(R.drawable.qd1);
+                        testData.add(getResources().getString(R.string.question42));
+                        imageId1.add(R.drawable.ss2);
+                        imageId2.add(R.drawable.qd2);
+                        testData.add(getResources().getString(R.string.question43));
+                        imageId1.add(R.drawable.ss3);
+                        imageId2.add(R.drawable.qd3);
+                    }
+
+                    if(state.equals(stateQuickShopper)){
+                        state = stateCarefulShopper;
+                        testData.add(getResources().getString(R.string.question61));
+                        imageId1.add(R.drawable.ss1);
+                        imageId2.add(R.drawable.qd1);
+                        testData.add(getResources().getString(R.string.question62));
+                        imageId1.add(R.drawable.ss2);
+                        imageId2.add(R.drawable.qd2);
+                        testData.add(getResources().getString(R.string.question63));
+                        imageId1.add(R.drawable.ss3);
+                        imageId2.add(R.drawable.qd3);
+                    }
+
                 }
-                if(position == 2){
-                    thirdPrompt = "left";
+                if(position >= 2 && position <= 4){
+                    incrementLeftSwipe();
                 }
-                if(position == 3){
-                    points += 0;
-                }
-                if(position == 4){
-                    points += 0;
-                }
-                if(position == 5){
-                    points += 0;
-                }
-                if(position == 6){
-                    points += 0;
-                }
-                if(position == 7){
-                    points += 0;
-                }
-                if(position == 8){
-                    points += 0;
-                }
+
 
             }
 
@@ -127,57 +107,85 @@ public class MainActivity extends AppCompatActivity {
 
                 //TODO: points system
                 if(position == 0){
-                    firstPrompt = "right";
+                    Log.i("Norman","position" + position + "right");
+
+                    testData.add(1, getResources().getString(R.string.question31));
+                    imageId1.add(1,R.drawable.qs31);
+                    imageId2.add(1,R.drawable.cs31);
+                    adapter.notifyDataSetChanged();
+
+                    state = stateQuickShopper;
                 }
                 if(position == 1){
-                    secondPrompt = "right";
+                    if(state.equals(stateBrowser)){
+                        state = stateCarefulShopper;
+                        testData.add(getResources().getString(R.string.question61));
+                        imageId1.add(R.drawable.ss1);
+                        imageId2.add(R.drawable.qd1);
+                        testData.add(getResources().getString(R.string.question62));
+                        imageId1.add(R.drawable.ss2);
+                        imageId2.add(R.drawable.qd2);
+                        testData.add(getResources().getString(R.string.question63));
+                        imageId1.add(R.drawable.ss3);
+                        imageId2.add(R.drawable.qd3);
+                    }
+
+                    if(state.equals(stateQuickShopper)){
+
+                        testData.add(getResources().getString(R.string.question51));
+                        imageId1.add(R.drawable.ss1);
+                        imageId2.add(R.drawable.qd1);
+                        testData.add(getResources().getString(R.string.question52));
+                        imageId1.add(R.drawable.ss2);
+                        imageId2.add(R.drawable.qd2);
+                        testData.add(getResources().getString(R.string.question53));
+                        imageId1.add(R.drawable.ss3);
+                        imageId2.add(R.drawable.qd3);
+                    }
                 }
-                if(position == 2){
-                    thirdPrompt = "right";
+                if(position >= 2 && position <= 4){
+                    incrementRightSwipe();
                 }
-                if(position == 3){
-                    points += 0;
-                }
-                if(position == 4){
-                    points += 0;
-                }
-                if(position == 5){
-                    points += 0;
-                }
-                if(position == 6){
-                    points += 0;
-                }
-                if(position == 7){
-                    points += 0;
-                }
-                if(position == 8){
-                    points += 0;
-                }
+
             }
 
             @Override
             public void cardsDepleted() {
                 Log.i("MainActivity", "no more cards");
 
-                //TODO: Backend calculation
                 String typeOfPerson = "";
-                if(firstPrompt.equals("left")){
-                    typeOfPerson = "something";
-                }else{
 
+                if(state.equals(stateBrowser)){
+
+                    if(ss > qd) {
+                        typeOfPerson = getResources().getString(R.string.archetype_SS);
+                    }else{
+                        typeOfPerson = getResources().getString(R.string.archetype_QD);
+                    }
+
+                    Log.i("Norman",state + " " + ss + " " + qd + " " + typeOfPerson);
                 }
-                if(secondPrompt.equals("left")){
 
-                }else{
+                if(state.equals(stateCarefulShopper)){
 
+                    if(oa > pe) {
+                        typeOfPerson = getResources().getString(R.string.archetype_OA);
+                    }else{
+                        typeOfPerson = getResources().getString(R.string.archetype_PE);
+                    }
+
+                    Log.i("Norman",state + " " + oa + " " + pe + " " + typeOfPerson);
                 }
-                if(thirdPrompt.equals("left")){
 
-                }else{
+                if(state.equals(stateQuickShopper)){
 
-                }
-                if(points < 10){
+                    if(hs > dd) {
+                        typeOfPerson = getResources().getString(R.string.archetype_HS);
+                    }else{
+                        typeOfPerson = getResources().getString(R.string.archetype_DD);
+                    }
 
+                    Log.i("Norman",state + " " + hs + " " + dd + " " + typeOfPerson);
                 }
 
                 Intent intent = new Intent(MainActivity.this, ResultActivity.class);
@@ -192,6 +200,34 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void cardActionUp() {
+
+            }
+
+            public void incrementLeftSwipe(){
+
+                if(state.equals(stateBrowser)){
+                    ss += 1;
+                }
+                if(state.equals(stateCarefulShopper)){
+                    oa += 1;
+                }
+                if(state.equals(stateQuickShopper)){
+                    hs += 1;
+                }
+
+            }
+
+            public void incrementRightSwipe(){
+
+                if(state.equals(stateBrowser)){
+                    qd += 1;
+                }
+                if(state.equals(stateCarefulShopper)){
+                    pe += 1;
+                }
+                if(state.equals(stateQuickShopper)){
+                    dd += 1;
+                }
 
             }
         });
