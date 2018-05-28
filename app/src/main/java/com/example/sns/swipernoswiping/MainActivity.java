@@ -9,6 +9,9 @@ import android.view.WindowManager;
 import com.daprlabs.cardstack.SwipeDeck;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Random;
+
 
 public class MainActivity extends AppCompatActivity {
     SwipeDeck cardStack;
@@ -25,6 +28,21 @@ public class MainActivity extends AppCompatActivity {
     int dd = 0;
     private String state = null;
 
+    final ArrayList<Integer> Question1_question = new ArrayList<>();
+    final ArrayList<Integer> Question2_question = new ArrayList<>();
+    final ArrayList<Integer> Question3_question = new ArrayList<>();
+
+    final ArrayList<Integer> Question1_imageLeft = new ArrayList<>();
+    final ArrayList<Integer> Question2_imageLeft = new ArrayList<>();
+    final ArrayList<Integer> Question3_imageLeft = new ArrayList<>();
+
+    final ArrayList<Integer> Question1_imageRight = new ArrayList<>();
+    final ArrayList<Integer> Question2_imageRight = new ArrayList<>();
+    final ArrayList<Integer> Question3_imageRight = new ArrayList<>();
+
+    final ArrayList<ArrayList<Integer>> Questions1to3_question
+            = new ArrayList<ArrayList<Integer>>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,9 +55,20 @@ public class MainActivity extends AppCompatActivity {
         final ArrayList<Integer> imageId1 = new ArrayList<>();
         final ArrayList<Integer> imageId2 = new ArrayList<>();
 
-        testData.add(getResources().getString(R.string.question11));
-        imageId1.add(R.drawable.br11);
-        imageId2.add(R.drawable.qs11);
+        populateQuestion1to3();
+
+        Random randomIndex = new Random();
+
+        int arrayListIndex = randomIndex.nextInt(Question1_question.size());
+
+        //testData.add(getResources().getString(R.string.question11));
+        //imageId1.add(R.drawable.br11);
+        //imageId2.add(R.drawable.qs11);
+        Log.i("Norman", "index " + arrayListIndex);
+
+        testData.add(getResources().getString(Question1_question.get(arrayListIndex)));
+        imageId1.add(Question1_imageLeft.get(arrayListIndex));
+        imageId2.add(Question1_imageRight.get(arrayListIndex));
 
         //TODO do the random selection
 
@@ -59,12 +88,14 @@ public class MainActivity extends AppCompatActivity {
                 if(position == 0){
 
                     state = stateBrowser;
-                    testData.add(1,getResources().getString(R.string.question21));
-                    imageId1.add(1,R.drawable.br21);
-                    imageId2.add(1,R.drawable.cs21);
-                    adapter.notifyDataSetChanged();
 
-                    Log.i("Norman","position" + position + "left");
+                    Random randomIndex = new Random();
+                    int arrayListIndex = randomIndex.nextInt(Question2_question.size());
+                    testData.add(1, getResources().getString(Question2_question.get(arrayListIndex)));
+                    imageId1.add(1,Question2_imageLeft.get(arrayListIndex));
+                    imageId2.add(1, Question2_imageRight.get(arrayListIndex));
+
+                    Log.i("Norman","position" + position + "left" + arrayListIndex);
                 }
                 if(position == 1){
 
@@ -108,10 +139,11 @@ public class MainActivity extends AppCompatActivity {
                 if(position == 0){
                     Log.i("Norman","position" + position + "right");
 
-                    testData.add(1, getResources().getString(R.string.question31));
-                    imageId1.add(1,R.drawable.qs31);
-                    imageId2.add(1,R.drawable.cs31);
-                    adapter.notifyDataSetChanged();
+                    Random randomIndex = new Random();
+                    int arrayListIndex = randomIndex.nextInt(Question3_question.size());
+                    testData.add(1, getResources().getString(Question3_question.get(arrayListIndex)));
+                    imageId1.add(1,Question3_imageLeft.get(arrayListIndex));
+                    imageId2.add(1, Question3_imageRight.get(arrayListIndex));
 
                     state = stateQuickShopper;
                 }
@@ -229,8 +261,97 @@ public class MainActivity extends AppCompatActivity {
                 }
 
             }
+
+
         });
+
+
+
+
     }
+
+    public void populateQuestion1to3(){
+
+        Integer [] q1strings = new Integer[] {
+                R.string.question11,
+                R.string.question12,
+                R.string.question13};
+
+        Question1_question.addAll(Arrays.asList(q1strings));
+
+        Integer [] q2strings = new Integer[] {
+                R.string.question21,
+                R.string.question22,
+                R.string.question23};
+
+        Question2_question.addAll(Arrays.asList(q2strings));
+
+        Integer [] q3strings = new Integer[] {
+                R.string.question31,
+                R.string.question32,
+                R.string.question33};
+
+        Question3_question.addAll(Arrays.asList(q3strings));
+
+        Integer [] q1imageLeft = new Integer[] {
+                R.drawable.br11,
+                R.drawable.br12,
+                R.drawable.br13};
+
+        Question1_imageLeft.addAll(Arrays.asList(q1imageLeft));
+
+        Integer [] q2imageLeft = new Integer[] {
+                R.drawable.br21,
+                R.drawable.br22,
+                R.drawable.br23};
+
+        Question2_imageLeft.addAll(Arrays.asList(q2imageLeft));
+
+        Integer [] q3imageLeft = new Integer[] {
+                R.drawable.qs31,
+                R.drawable.qs32,
+                R.drawable.qs33};
+
+        Question3_imageLeft.addAll(Arrays.asList(q3imageLeft));
+
+        Integer [] q1imageRight = new Integer[] {
+                R.drawable.qs11,
+                R.drawable.qs12,
+                R.drawable.qs13};
+
+        Question1_imageRight.addAll(Arrays.asList(q1imageRight));
+
+        Integer [] q2imageRight = new Integer[] {
+                R.drawable.cs21,
+                R.drawable.cs22,
+                R.drawable.cs23};
+
+        Question2_imageRight.addAll(Arrays.asList(q2imageRight));
+
+        Integer [] q3imageRight = new Integer[] {
+                R.drawable.cs31,
+                R.drawable.cs32,
+                R.drawable.cs33};
+
+        Question3_imageRight.addAll(Arrays.asList(q3imageRight));
+
+        Questions1to3_question.add(Question1_question);
+        Questions1to3_question.add(Question2_question);
+        Questions1to3_question.add(Question3_question);
+
+        for (ArrayList<Integer> al: Questions1to3_question){
+
+            for(Integer rid: al){
+                Log.i("Norman", getResources().getString(rid));
+            }
+        }
+
+
+
+
+    }
+
+
 
 
 }
