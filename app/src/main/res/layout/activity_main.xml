@@ -35,7 +35,7 @@
             android:layout_height="match_parent">
 
             <ImageView
-                android:id="@+id/oldprint1"
+                android:id="@+id/oldprint_right"
                 android:layout_width="400dp"
                 android:layout_height="400dp"
                 android:layout_alignParentEnd="true"
@@ -43,7 +43,7 @@
                 android:src="@drawable/sample" />
 
             <ImageView
-                android:id="@+id/oldprint2"
+                android:id="@+id/oldprint_left"
                 android:layout_width="400dp"
                 android:layout_height="400dp"
                 android:src="@drawable/sample" />

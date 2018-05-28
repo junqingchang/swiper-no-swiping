@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         imageId1.add(R.drawable.br11);
         imageId2.add(R.drawable.qs11);
 
-        //TODO do the random selection 
+        //TODO do the random selection
 
 
 
@@ -69,28 +69,27 @@ public class MainActivity extends AppCompatActivity {
                 if(position == 1){
 
                     if(state.equals(stateBrowser)){
-                        testData.add(getResources().getString(R.string.question41));
-                        imageId1.add(R.drawable.ss1);
-                        imageId2.add(R.drawable.qd1);
-                        testData.add(getResources().getString(R.string.question42));
-                        imageId1.add(R.drawable.ss2);
-                        imageId2.add(R.drawable.qd2);
-                        testData.add(getResources().getString(R.string.question43));
-                        imageId1.add(R.drawable.ss3);
-                        imageId2.add(R.drawable.qd3);
+                        testData.add(getResources().getString(R.string.question61));
+                        imageId1.add(R.drawable.oa1);
+                        imageId2.add(R.drawable.pe1);
+                        testData.add(getResources().getString(R.string.question62));
+                        imageId1.add(R.drawable.oa2);
+                        imageId2.add(R.drawable.pe2);
+                        testData.add(getResources().getString(R.string.question63));
+                        imageId1.add(R.drawable.oa3);
+                        imageId2.add(R.drawable.pe3);
                     }
 
                     if(state.equals(stateQuickShopper)){
-                        state = stateCarefulShopper;
-                        testData.add(getResources().getString(R.string.question61));
-                        imageId1.add(R.drawable.ss1);
-                        imageId2.add(R.drawable.qd1);
-                        testData.add(getResources().getString(R.string.question62));
-                        imageId1.add(R.drawable.ss2);
-                        imageId2.add(R.drawable.qd2);
-                        testData.add(getResources().getString(R.string.question63));
-                        imageId1.add(R.drawable.ss3);
-                        imageId2.add(R.drawable.qd3);
+                        testData.add(getResources().getString(R.string.question51));
+                        imageId1.add(R.drawable.hs1);
+                        imageId2.add(R.drawable.dd1);
+                        testData.add(getResources().getString(R.string.question52));
+                        imageId1.add(R.drawable.hs2);
+                        imageId2.add(R.drawable.dd2);
+                        testData.add(getResources().getString(R.string.question53));
+                        imageId1.add(R.drawable.hs3);
+                        imageId2.add(R.drawable.dd3);
                     }
 
                 }
@@ -119,26 +118,26 @@ public class MainActivity extends AppCompatActivity {
                 if(position == 1){
                     if(state.equals(stateBrowser)){
                         state = stateCarefulShopper;
-                        testData.add(getResources().getString(R.string.question61));
+                        testData.add(getResources().getString(R.string.question41));
                         imageId1.add(R.drawable.ss1);
                         imageId2.add(R.drawable.qd1);
-                        testData.add(getResources().getString(R.string.question62));
+                        testData.add(getResources().getString(R.string.question42));
                         imageId1.add(R.drawable.ss2);
                         imageId2.add(R.drawable.qd2);
-                        testData.add(getResources().getString(R.string.question63));
+                        testData.add(getResources().getString(R.string.question43));
                         imageId1.add(R.drawable.ss3);
                         imageId2.add(R.drawable.qd3);
                     }
 
                     if(state.equals(stateQuickShopper)){
-
-                        testData.add(getResources().getString(R.string.question51));
+                        state = stateCarefulShopper;
+                        testData.add(getResources().getString(R.string.question41));
                         imageId1.add(R.drawable.ss1);
                         imageId2.add(R.drawable.qd1);
-                        testData.add(getResources().getString(R.string.question52));
+                        testData.add(getResources().getString(R.string.question42));
                         imageId1.add(R.drawable.ss2);
                         imageId2.add(R.drawable.qd2);
-                        testData.add(getResources().getString(R.string.question53));
+                        testData.add(getResources().getString(R.string.question43));
                         imageId1.add(R.drawable.ss3);
                         imageId2.add(R.drawable.qd3);
                     }
@@ -157,17 +156,6 @@ public class MainActivity extends AppCompatActivity {
 
                 if(state.equals(stateBrowser)){
 
-                    if(ss > qd) {
-                        typeOfPerson = getResources().getString(R.string.archetype_SS);
-                    }else{
-                        typeOfPerson = getResources().getString(R.string.archetype_QD);
-                    }
-
-                    Log.i("Norman",state + " " + ss + " " + qd + " " + typeOfPerson);
-                }
-
-                if(state.equals(stateCarefulShopper)){
-
                     if(oa > pe) {
                         typeOfPerson = getResources().getString(R.string.archetype_OA);
                     }else{
@@ -175,6 +163,17 @@ public class MainActivity extends AppCompatActivity {
                     }
 
                     Log.i("Norman",state + " " + oa + " " + pe + " " + typeOfPerson);
+                }
+
+                if(state.equals(stateCarefulShopper)){
+
+                    if(ss > qd) {
+                        typeOfPerson = getResources().getString(R.string.archetype_SS);
+                    }else{
+                        typeOfPerson = getResources().getString(R.string.archetype_QD);
+                    }
+
+                    Log.i("Norman",state + " " + ss + " " + qd + " " + typeOfPerson);
                 }
 
                 if(state.equals(stateQuickShopper)){
@@ -206,10 +205,10 @@ public class MainActivity extends AppCompatActivity {
             public void incrementLeftSwipe(){
 
                 if(state.equals(stateBrowser)){
-                    ss += 1;
+                    oa += 1;
                 }
                 if(state.equals(stateCarefulShopper)){
-                    oa += 1;
+                    ss += 1;
                 }
                 if(state.equals(stateQuickShopper)){
                     hs += 1;
@@ -220,10 +219,10 @@ public class MainActivity extends AppCompatActivity {
             public void incrementRightSwipe(){
 
                 if(state.equals(stateBrowser)){
-                    qd += 1;
+                    pe += 1;
                 }
                 if(state.equals(stateCarefulShopper)){
-                    pe += 1;
+                    qd += 1;
                 }
                 if(state.equals(stateQuickShopper)){
                     dd += 1;
