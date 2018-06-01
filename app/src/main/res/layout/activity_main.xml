@@ -43,10 +43,25 @@
                 android:src="@drawable/sample" />
 
             <ImageView
+                android:id="@+id/swipe_left_indication"
+                android:layout_width="400dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/oldprint_right"
+                android:src="@drawable/swipe_left_indication"/>
+
+            <ImageView
                 android:id="@+id/oldprint_left"
                 android:layout_width="400dp"
                 android:layout_height="400dp"
                 android:src="@drawable/sample" />
+
+            <ImageView
+                android:id="@+id/swipe_right_indication"
+                android:layout_width="400dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/oldprint_left"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/swipe_right_indication"/>
         </RelativeLayout>
 
     </LinearLayout>
