@@ -30,8 +30,9 @@ and transfer the files into android studio
 
 ## Authors
 
-* **Soong Cun Yuan**
+* [**Soong Cun Yuan**](https://github.com/zengersoong)
 * **Chang Jun Qing**
+* [**Norman Lee**](https://github.com/otakuprof)
 
 ## Acknowledgments
 * [aaronbond](https://github.com/aaronbond) - providing the Swipe-Deck interface
