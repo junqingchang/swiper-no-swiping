@@ -1,6 +1,7 @@
 package com.example.sns.swipernoswiping;
 
 import android.content.Intent;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -8,6 +9,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class ResultActivity extends AppCompatActivity {
 
@@ -15,6 +17,11 @@ public class ResultActivity extends AppCompatActivity {
     TextView archetypeTextView;
     TextView youAreTextView;
     TextView descriptionTextView;
+    Handler handler;
+    Runnable runnable;
+    int delayMilliseconds;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +29,20 @@ public class ResultActivity extends AppCompatActivity {
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_result);
+
+        handler = new Handler();
+        runnable = new Runnable() {
+            @Override
+            public void run() {
+
+                Toast.makeText(ResultActivity.this, getResources().getString(R.string.inactivity_message),Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(ResultActivity.this, SimpleViewFlipActivity.class);
+                startActivity(intent);
+
+            }
+        };
+
+        delayMilliseconds = getResources().getInteger(R.integer.inactivity_timeout);
 
         Intent in = getIntent();
         Bundle b = in.getExtras();
@@ -73,5 +94,19 @@ public class ResultActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    @Override
+    public void onUserInteraction() {
+        // TODO Auto-generated method stub
+        super.onUserInteraction();
+        stopHandler();//stop first and then start
+        startHandler();
+    }
+    public void stopHandler() {
+        handler.removeCallbacks(runnable);
+    }
+    public void startHandler() {
+        handler.postDelayed(runnable, delayMilliseconds); //for 5 minutes
     }
 }

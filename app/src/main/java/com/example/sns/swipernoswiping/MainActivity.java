@@ -1,11 +1,14 @@
 package com.example.sns.swipernoswiping;
 
 import android.content.Intent;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Toast;
+
 import com.daprlabs.cardstack.SwipeDeck;
 
 import java.util.ArrayList;
@@ -43,6 +46,10 @@ public class MainActivity extends AppCompatActivity {
     final ArrayList<ArrayList<Integer>> Questions1to3_question
             = new ArrayList<ArrayList<Integer>>();
 
+    Handler handler;
+    Runnable runnable;
+    int delayMilliseconds;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,6 +61,18 @@ public class MainActivity extends AppCompatActivity {
         final ArrayList<String> testData = new ArrayList<>();
         final ArrayList<Integer> imageId1 = new ArrayList<>();
         final ArrayList<Integer> imageId2 = new ArrayList<>();
+
+        delayMilliseconds = getResources().getInteger(R.integer.inactivity_timeout);
+        handler = new Handler();
+        runnable = new Runnable() {
+            @Override
+            public void run() {
+
+                Toast.makeText(MainActivity.this,getResources().getString(R.string.inactivity_message),Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainActivity.this,SimpleViewFlipActivity.class);
+                startActivity(intent);
+            }
+        };
 
         populateQuestion1to3();
 
@@ -349,6 +368,20 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+    }
+
+    @Override
+    public void onUserInteraction() {
+        // TODO Auto-generated method stub
+        super.onUserInteraction();
+        stopHandler();//stop first and then start
+        startHandler();
+    }
+    public void stopHandler() {
+        handler.removeCallbacks(runnable);
+    }
+    public void startHandler() {
+        handler.postDelayed(runnable, delayMilliseconds); //for 5 minutes
     }
 
 
