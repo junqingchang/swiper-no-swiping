@@ -6,6 +6,7 @@
     <string name="flash_card_back_intro_text">What kind of shopper are you? \nHave a go at this quick personality test!</string>
     <string name="flash_card_back_sub_text">This will provide you with a customised guide to navigate the exhibition.</string>
     <string name="flash_card_back_swipe_text">You will be shown some images. Select your preferences. </string>
+    <string name="inactivity_message">Inactive Screen</string>
     <string name="question11">When I shop, I &#8230; </string>
     <string name="question12">To me, shopping is &#8230; </string>
     <string name="question13">I prefer to &#8230; </string>
@@ -15,19 +16,28 @@
     <string name="question31">I would watch a movie &#8230;</string>
     <string name="question32">When shopping, I dislike &#8230; </string>
     <string name="question33">I would select a hotel room based on &#8230; </string>
-    <string name="question41">question41</string>
-    <string name="question42">question42</string>
-    <string name="question43">question43</string>
-    <string name="question51">question51</string>
-    <string name="question52">question52</string>
-    <string name="question53">question53</string>
-    <string name="question61">question61</string>
-    <string name="question62">question62</string>
-    <string name="question63">question63</string>
+    <string name="question41">I would buy a book from &#8230; </string>
+    <string name="question42">I would buy furniture from &#8230;</string>
+    <string name="question43">I would buy a new phone from &#8230;</string>
+    <string name="question51">During a short break, I would read &#8230;</string>
+    <string name="question52">I would go somewhere far by taking &#8230;</string>
+    <string name="question53">When I am thirsty, I would drink something &#8230;</string>
+    <string name="question61">At a bookstore, I would first &#8230;</string>
+    <string name="question62">I would buy furniture from &#8230;</string>
+    <string name="question63">When I travel, I &#8230;</string>
     <string name="archetype_SS">Strategic Spender</string>
-    <string name="archetype_QD">Quality Seeker</string>
+    <string name="archetype_QD">Quality Devotee</string>
     <string name="archetype_DD">Dollar Defaulter</string>
-    <string name="archetype_HS">Habitual Sprinter</string>
+    <string name="archetype_HS">Habitual Spender</string>
     <string name="archetype_OA">Opportunistic Adventurer</string>
     <string name="archetype_PE">Passionate Explorer</string>
+    <string name="resultsYouAreA">You are a</string>
+    <string name="resultsYouAreAn">You are an</string>
+    <string name="description_SS">You relentlessly persue the best deals with the biggest savings.</string>
+    <string name="description_QD">You scrutinize offers that are balanced between price and usefulness.</string>
+    <string name="description_DD">You look for the cheapest offers first.</string>
+    <string name="description_HS">You usually stick to and buy the same brands.</string>
+    <string name="description_OA">You enjoy looking for and finding the cheapest deals.</string>
+    <string name="description_PE">You love exploring and are usually the first to discover the latest trends.</string>
+
 </resources>

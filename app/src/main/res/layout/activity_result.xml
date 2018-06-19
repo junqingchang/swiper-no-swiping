@@ -8,13 +8,35 @@
     tools:context=".ResultActivity">
 
     <TextView
+        android:paddingTop="9sp"
+        android:id="@+id/resultsYouAre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="You are a"
+        android:textSize="30sp"/>
+
+    <TextView
+        android:paddingTop="6sp"
         android:id="@+id/resultsTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
+        android:layout_below="@+id/resultsYouAre"
+        android:layout_centerHorizontal="true"
         android:text="Results here"
-        android:textSize="30dp"
+        android:textSize="60sp"
         android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/resultsDescription"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp"
+        android:layout_below="@+id/resultsTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Description here"
+        android:textSize="45sp"/>
 
     <Button
         android:id="@+id/restartBtn"
