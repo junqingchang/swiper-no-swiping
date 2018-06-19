@@ -5,7 +5,8 @@
     <string name="flash_card_front_button_text">Tap to get your personalized guide to the exhibition!</string>
     <string name="flash_card_back_intro_text">What kind of shopper are you? \nHave a go at this quick personality test!</string>
     <string name="flash_card_back_sub_text">This will provide you with a customised guide to navigate the exhibition.</string>
-    <string name="flash_card_back_swipe_text">You will be shown some images. Select your preferences. </string>
+    <string name="flash_card_back_swipe_text">You will be shown some images. \nSelect the image you prefer by swiping left or right. </string>
+    <string name="flash_card_back_begin_text">Begin the test</string>
     <string name="inactivity_message">Inactive Screen</string>
     <string name="question11">When I shop, I &#8230; </string>
     <string name="question12">To me, shopping is &#8230; </string>

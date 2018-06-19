@@ -40,7 +40,12 @@
                 android:layout_gravity="center_horizontal"
                 android:text="@string/flash_card_front_button_text"
                 android:textColor="@color/colorGrayText"
-                android:textSize="18sp"/>
+                android:textSize="24sp"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:src="@drawable/orange_pixel"/>
 
         </LinearLayout>
 
