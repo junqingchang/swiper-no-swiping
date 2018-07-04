@@ -26,6 +26,9 @@
     <string name="question61">At a bookstore, I would first &#8230;</string>
     <string name="question62">I would buy furniture from &#8230;</string>
     <string name="question63">When I travel, I &#8230;</string>
+    <string name="super_archetype_SS_QD">Careful Shopper</string>
+    <string name="super_archetype_DD_HS">Quick Shopper</string>
+    <string name="super_archetype_OA_PE">Browser</string>
     <string name="archetype_SS">Strategic Spender</string>
     <string name="archetype_QD">Quality Devotee</string>
     <string name="archetype_DD">Dollar Defaulter</string>
@@ -40,5 +43,7 @@
     <string name="description_HS">You usually stick to and buy the same brands.</string>
     <string name="description_OA">You enjoy looking for and finding the cheapest deals.</string>
     <string name="description_PE">You love exploring and are usually the first to discover the latest trends.</string>
+    <string name="resultsBoxTextStart">Start your tour! Pick up the </string>
+    <string name="resultsBoxTextEnd">map from the holder below.</string>
 
 </resources>

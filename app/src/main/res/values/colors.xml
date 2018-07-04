@@ -15,4 +15,7 @@
     <color name="colorGreen">#009687</color>
     <color name="colorOrange">#ff5505</color>
     <color name="colorWhite">#ffffff</color>
+    <color name="colorQS">#ffc20e</color>
+    <color name="colorCS">#c9adad</color>
+    <color name="colorBR">#2ba8b2</color>
 </resources>

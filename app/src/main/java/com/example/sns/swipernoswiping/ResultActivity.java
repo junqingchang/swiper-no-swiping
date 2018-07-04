@@ -9,6 +9,8 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,11 +20,14 @@ public class ResultActivity extends AppCompatActivity {
     TextView archetypeTextView;
     TextView youAreTextView;
     TextView descriptionTextView;
+    TextView superArchetypeTextView;
+    TextView mapEndTextView;
+    ImageView mapNameImageView;
+    TextView mapNamePleasePickUp;
     Handler handler;
     Runnable runnable;
     int delayMilliseconds;
-
-
+    String superArchetype;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,8 +54,13 @@ public class ResultActivity extends AppCompatActivity {
         Intent in = getIntent();
         Bundle b = in.getExtras();
         archetypeTextView = findViewById(R.id.resultsTextView);
+        superArchetypeTextView = findViewById(R.id.resultsSuperarchetypeTextView);
+
         youAreTextView = findViewById(R.id.resultsYouAre);
         descriptionTextView = findViewById(R.id.resultsDescription);
+        mapEndTextView = findViewById(R.id.resultsMapEnd);
+        mapNameImageView = findViewById(R.id.resultsMapNameImage);
+        mapNamePleasePickUp = findViewById( R.id.resultsPleaseTake);
         boolean isOA, isPE, isHS, isDD, isSS, isQD;
 
 
@@ -84,6 +94,35 @@ public class ResultActivity extends AppCompatActivity {
             if(isHS) descriptionTextView.setText(getResources().getString(R.string.description_HS));
 
             if(isDD) descriptionTextView.setText(getResources().getString(R.string.description_DD));
+
+            if(isOA || isPE) {
+                superArchetype = getResources().getString(R.string.super_archetype_OA_PE);
+                mapNameImageView.setImageResource(R.drawable.superarchetype_thrillseeker);
+                mapNamePleasePickUp.setTextColor(getResources().getColor(R.color.colorBR));
+                mapEndTextView.setTextColor(getResources().getColor(R.color.colorBR));
+
+            }
+
+            if(isDD || isHS){
+                superArchetype = getResources().getString(R.string.super_archetype_DD_HS);
+                mapNameImageView.setImageResource(R.drawable.superarchetype_speedyshopper);
+                mapNamePleasePickUp.setTextColor(getResources().getColor(R.color.colorQS));
+                mapEndTextView.setTextColor(getResources().getColor(R.color.colorQS));
+
+
+
+            }
+
+            if(isSS || isQD){
+                superArchetype = getResources().getString(R.string.super_archetype_SS_QD);
+                mapNameImageView.setImageResource(R.drawable.superarchetype_carefulshopper);
+                mapNamePleasePickUp.setTextColor(getResources().getColor(R.color.colorCS));
+                mapEndTextView.setTextColor(getResources().getColor(R.color.colorCS));
+
+            }
+
+            superArchetypeTextView.setText(superArchetype);
+            //mapNameTextView.setText(superArchetype);
 
         }
         restartBtn = findViewById(R.id.restartBtn);
