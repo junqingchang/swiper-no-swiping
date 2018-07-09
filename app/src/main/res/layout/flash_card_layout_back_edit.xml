@@ -19,47 +19,42 @@
                 android:layout_height="wrap_content"
                 android:padding="20dp">
 
-
-
-
                 <TextView
-                    android:id="@+id/txtLabelExample_cardback"
+                    android:id="@+id/backcard_title_testname"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="0dp"
-                    android:text="@string/flash_card_back_intro_text"
+                    android:text="@string/flash_card_test_name"
                     android:textColor="@android:color/white"
-                    android:textSize="30sp"
+                    android:textSize="45dp"
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/txtLabelExample_subheader"
+                    android:id="@+id/backcard_purpose"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_below="@id/txtLabelExample_cardback"
-                    android:layout_marginTop="15dp"
-                    android:text="@string/flash_card_back_sub_text"
-                    android:textColor="@android:color/white"
-                    android:textSize="22sp"
-                    android:textStyle="bold|italic" />
+                    android:layout_below="@id/backcard_title_testname"
+                    android:layout_marginTop="12dp"
+                    android:text="@string/flash_card_back_pickup"
+                    android:textColor="@color/colorGrayTextDark"
+                    android:textSize="30dp" />
 
                 <TextView
-                    android:id="@+id/txtExample_cardback"
+                    android:id="@+id/backcard_instructions"
                     android:layout_width="match_parent"
-                    android:layout_height="83dp"
-                    android:layout_below="@+id/txtLabelExample_subheader"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/backcard_purpose"
                     android:layout_marginTop="12dp"
                     android:text="@string/flash_card_back_swipe_text"
                     android:textColor="@color/colorGrayTextDark"
-                    android:textSize="22sp" />
+                    android:textSize="30dp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/txtExample_cardback"
+                    android:layout_below="@id/backcard_instructions"
                     android:gravity="center">
 
                     <ImageView
@@ -72,6 +67,8 @@
                         android:padding="5dp"
                         android:src="@drawable/appscreenshot"/>
                 </LinearLayout>
+
+
             </RelativeLayout>
 
             <View

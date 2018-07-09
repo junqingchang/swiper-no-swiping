@@ -5,10 +5,12 @@ import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.CardView;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 import java.lang.System;
 
@@ -42,7 +44,22 @@ public class SimpleViewFlipActivity extends AppCompatActivity {
         easyFlipView.setFlipDuration(1000);
         easyFlipView.setFlipEnabled(true);
 
-        ImageView sellingDreamsLogo = findViewById(R.id.frontcardSellingDreamsLogo);
+        LinearLayout frontcardLinearLayout;
+        CardView frontcardCardView;
+        frontcardLinearLayout = findViewById(R.id.frontcardBase);
+
+        frontcardLinearLayout.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                        easyFlipView.flipTheView();
+
+                    }
+                }
+        );
+
+        /* ImageView sellingDreamsLogo = findViewById(R.id.frontcardSellingDreamsLogo);
 
         sellingDreamsLogo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,7 +69,7 @@ public class SimpleViewFlipActivity extends AppCompatActivity {
                 }
             }
 
-        );
+        ); */
 
 
         handler = new Handler();
@@ -89,13 +106,13 @@ public class SimpleViewFlipActivity extends AppCompatActivity {
             }
         });
 
-        findViewById(R.id.frontcardGoBtn).setOnClickListener(new View.OnClickListener() {
+        /* findViewById(R.id.frontcardGoBtn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
         //        Toast.makeText(SimpleViewFlipActivity.this, "Back Card", Toast.LENGTH_SHORT).show();
             easyFlipView.flipTheView();
             }
-        });
+        }); */
 
         easyFlipView.setOnFlipListener(new EasyFlipView.OnFlipAnimationListener() {
             @Override

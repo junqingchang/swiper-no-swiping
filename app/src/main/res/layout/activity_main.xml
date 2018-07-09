@@ -18,7 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="Swipe left or right depending which you like!" />
+            android:text="Swipe left or right depending on which you like!" />
 
         <TextView
             android:id="@+id/textView2"
@@ -26,7 +26,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:text="Large Text"
-            android:textSize="30dp"
+            android:textSize="45dp"
             android:textColor="@color/colorWhite"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
@@ -38,30 +38,41 @@
                 android:id="@+id/oldprint_right"
                 android:layout_width="400dp"
                 android:layout_height="400dp"
+                android:paddingRight="100dp"
                 android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
                 android:layout_alignParentTop="true"
-                android:src="@drawable/sample" />
+                android:src="@drawable/br11" />
 
             <ImageView
-                android:id="@+id/swipe_left_indication"
+                android:id="@+id/swipe_right_indication"
                 android:layout_width="400dp"
+                android:paddingRight="100dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/oldprint_right"
-                android:src="@drawable/swipe_left_indication"/>
+                android:layout_alignParentRight="true"
+                android:src="@drawable/swipe_right_indication"/>
+
+
 
             <ImageView
                 android:id="@+id/oldprint_left"
                 android:layout_width="400dp"
                 android:layout_height="400dp"
-                android:src="@drawable/sample" />
+                android:layout_alignParentLeft="true"
+                android:paddingLeft="100dp"
+                android:src="@drawable/br21" />
 
             <ImageView
-                android:id="@+id/swipe_right_indication"
+                android:id="@+id/swipe_left_indication"
+                android:paddingLeft="100dp"
                 android:layout_width="400dp"
                 android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
                 android:layout_below="@+id/oldprint_left"
-                android:layout_alignParentRight="true"
-                android:src="@drawable/swipe_right_indication"/>
+                android:src="@drawable/swipe_left_indication"/>
+
+
         </RelativeLayout>
 
     </LinearLayout>
