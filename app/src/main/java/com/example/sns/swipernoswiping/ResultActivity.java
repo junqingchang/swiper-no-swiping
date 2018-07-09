@@ -76,11 +76,15 @@ public class ResultActivity extends AppCompatActivity {
             isDD = type.equals(getResources().getString(R.string.archetype_DD));
 
             //set You are a vs You are an
-            if( isOA){
+            /* if( isOA){
                 youAreTextView.setText(getResources().getString(R.string.resultsYouAreAn));
             }else{
                 youAreTextView.setText(getResources().getString(R.string.resultsYouAreA));
-            }
+            } */
+
+            //all superarchetypes don't start with a vowel
+            youAreTextView.setText(getResources().getString(R.string.resultsYouAreA));
+
 
             //now the description
             if(isOA) descriptionTextView.setText(getResources().getString(R.string.description_OA));
@@ -97,7 +101,7 @@ public class ResultActivity extends AppCompatActivity {
 
             if(isOA || isPE) {
                 superArchetype = getResources().getString(R.string.super_archetype_OA_PE);
-                mapNameImageView.setImageResource(R.drawable.superarchetype_thrillseeker);
+                mapNameImageView.setImageResource(R.drawable.superarchetype_br_treasurehunter_new);
                 mapNamePleasePickUp.setTextColor(getResources().getColor(R.color.colorBR));
                 mapEndTextView.setTextColor(getResources().getColor(R.color.colorBR));
 
@@ -105,7 +109,7 @@ public class ResultActivity extends AppCompatActivity {
 
             if(isDD || isHS){
                 superArchetype = getResources().getString(R.string.super_archetype_DD_HS);
-                mapNameImageView.setImageResource(R.drawable.superarchetype_speedyshopper);
+                mapNameImageView.setImageResource(R.drawable.superarchetype_qs_speedyshopper_new);
                 mapNamePleasePickUp.setTextColor(getResources().getColor(R.color.colorQS));
                 mapEndTextView.setTextColor(getResources().getColor(R.color.colorQS));
 
@@ -115,7 +119,7 @@ public class ResultActivity extends AppCompatActivity {
 
             if(isSS || isQD){
                 superArchetype = getResources().getString(R.string.super_archetype_SS_QD);
-                mapNameImageView.setImageResource(R.drawable.superarchetype_carefulshopper);
+                mapNameImageView.setImageResource(R.drawable.superarchetype_cs_carefulconsumer_new);
                 mapNamePleasePickUp.setTextColor(getResources().getColor(R.color.colorCS));
                 mapEndTextView.setTextColor(getResources().getColor(R.color.colorCS));
 
@@ -125,7 +129,7 @@ public class ResultActivity extends AppCompatActivity {
             //mapNameTextView.setText(superArchetype);
 
         }
-        restartBtn = findViewById(R.id.restartBtn);
+        restartBtn = findViewById(R.id.resultsRestartBtn);
 
         restartBtn.setOnClickListener(new View.OnClickListener() {
             @Override

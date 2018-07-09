@@ -148,13 +148,26 @@
         android:text="Please drop off the map at the return point near the exit.\nEnjoy the exhibition!"
         android:textSize="30sp"/>
 
-    <Button
-        android:id="@+id/restartBtn"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="20dp"
-        android:text="Restart" />
+        android:layout_below="@id/resultsPleaseDropOff"
+        android:gravity="center"
+        android:orientation="horizontal">
+        <!--style="@style/Widget.AppCompat.Button.Borderless"-->
+
+        <Button
+            android:id="@+id/resultsRestartBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="65sp"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="10dp"
+            android:textSize="20sp"
+            android:padding="10dp"
+            android:textAllCaps="false"
+            android:text="@string/resultsRestartButton"
+            android:background="@drawable/button_small"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
 
 </RelativeLayout>
