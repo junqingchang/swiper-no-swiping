@@ -34,42 +34,53 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <View
+                android:id="@+id/oldprint_anchor"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_centerInParent="true"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/orange_pixel"
+                ></View>
+
             <ImageView
                 android:id="@+id/oldprint_right"
                 android:layout_width="400dp"
                 android:layout_height="400dp"
-                android:paddingRight="100dp"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@id/oldprint_anchor"
+                android:layout_toEndOf="@id/oldprint_anchor"
+                android:layout_marginTop="0dp"
+                android:layout_marginLeft="100dp"
                 android:src="@drawable/br11" />
 
             <ImageView
                 android:id="@+id/swipe_right_indication"
                 android:layout_width="400dp"
-                android:paddingRight="100dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/oldprint_right"
-                android:layout_alignParentRight="true"
+                android:layout_below="@id/oldprint_right"
+                android:layout_toRightOf="@id/oldprint_anchor"
+                android:layout_toEndOf="@id/oldprint_anchor"
+                android:layout_marginTop="-50dp"
+                android:layout_marginLeft="100dp"
                 android:src="@drawable/swipe_right_indication"/>
-
-
 
             <ImageView
                 android:id="@+id/oldprint_left"
                 android:layout_width="400dp"
                 android:layout_height="400dp"
-                android:layout_alignParentLeft="true"
-                android:paddingLeft="100dp"
+                android:layout_toLeftOf="@id/oldprint_anchor"
+                android:layout_marginTop="0dp"
+                android:layout_marginRight="100dp"
                 android:src="@drawable/br21" />
 
             <ImageView
                 android:id="@+id/swipe_left_indication"
-                android:paddingLeft="100dp"
+                android:layout_marginRight="100dp"
+                android:layout_marginTop="-50dp"
                 android:layout_width="400dp"
                 android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_below="@+id/oldprint_left"
+                android:layout_below="@id/oldprint_left"
+                android:layout_toLeftOf="@id/oldprint_anchor"
                 android:src="@drawable/swipe_left_indication"/>
 
 
