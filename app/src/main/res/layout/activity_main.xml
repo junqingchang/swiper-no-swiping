@@ -60,7 +60,7 @@
                 android:layout_below="@id/oldprint_right"
                 android:layout_toRightOf="@id/oldprint_anchor"
                 android:layout_toEndOf="@id/oldprint_anchor"
-                android:layout_marginTop="-50dp"
+                android:layout_marginTop="-10dp"
                 android:layout_marginLeft="100dp"
                 android:src="@drawable/swipe_right_indication"/>
 
@@ -76,7 +76,7 @@
             <ImageView
                 android:id="@+id/swipe_left_indication"
                 android:layout_marginRight="100dp"
-                android:layout_marginTop="-50dp"
+                android:layout_marginTop="-10dp"
                 android:layout_width="400dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/oldprint_left"
