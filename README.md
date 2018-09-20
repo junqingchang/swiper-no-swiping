@@ -3,7 +3,7 @@ SUTD x NLB project for the exhibition SELLING DREAMS: EARLY ADVERTISING IN SINGA
 Application for users to find out a suitable path to take at the exhibition
 
 Photo of the exhibition
-![alt text](https://github.com/junqingchang/swiper-no-swiping/blob/master/Screenshots/exhibition.JPG)
+![alt text](https://github.com/junqingchang/swiper-no-swiping/blob/master/Screenshots/exhibition.jpg)
 
 ![alt text](https://github.com/junqingchang/swiper-no-swiping/blob/master/Screenshots/SD1.JPG)
 ![alt text](https://github.com/junqingchang/swiper-no-swiping/blob/master/Screenshots/SD2.JPG)
