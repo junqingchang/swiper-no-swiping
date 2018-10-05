@@ -1,7 +1,9 @@
 # Selling Dreams
-SUTD x NLB project for an upcoming exhibition
-
+SUTD x NLB project for the exhibition SELLING DREAMS: EARLY ADVERTISING IN SINGAPORE
 Application for users to find out a suitable path to take at the exhibition
+
+Photo of the exhibition
+![alt text](https://github.com/junqingchang/swiper-no-swiping/blob/master/Screenshots/exhibition.jpg)
 
 ![alt text](https://github.com/junqingchang/swiper-no-swiping/blob/master/Screenshots/SD1.JPG)
 ![alt text](https://github.com/junqingchang/swiper-no-swiping/blob/master/Screenshots/SD2.JPG)
