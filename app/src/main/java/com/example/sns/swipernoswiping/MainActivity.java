@@ -24,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
     final private String stateQuickShopper = "qs";
     final private String stateCarefulShopper = "cs";
 
+    int times = 0;
+
     int ss = 0;
     int qd = 0;
     int pe = 0;
@@ -60,11 +62,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.swipe_view);
         cardStack = findViewById(R.id.swipe_deck);
 
+
         final ArrayList<String> testData = new ArrayList<>();
         final ArrayList<Integer> imageId1 = new ArrayList<>();
         final ArrayList<Integer> imageId2 = new ArrayList<>();
 
         delayMilliseconds = getResources().getInteger(R.integer.inactivity_timeout);
+
         handler = new Handler();
         runnable = new Runnable() {
             @Override
@@ -75,6 +79,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         };
+
+        startHandler();
 
         populateQuestion1to3();
 
@@ -240,6 +246,7 @@ public class MainActivity extends AppCompatActivity {
                     Log.i("Norman",state + " " + hs + " " + dd + " " + typeOfPerson);
                 }
 
+
                 Intent intent = new Intent(MainActivity.this, ResultActivity.class);
                 intent.putExtra("type", typeOfPerson);
                 startActivity(intent);
@@ -378,12 +385,23 @@ public class MainActivity extends AppCompatActivity {
         super.onUserInteraction();
         stopHandler();//stop first and then start
         startHandler();
+        times++;
+
+    }
+
+    @Override
+    protected void onPause(){
+        super.onPause();
+        stopHandler();
     }
     public void stopHandler() {
+
         handler.removeCallbacks(runnable);
+        Log.i("LOGCAT","Handler Stopped " + MainActivity.class.getSimpleName());
     }
     public void startHandler() {
         handler.postDelayed(runnable, delayMilliseconds); //for 5 minutes
+        Log.i("LOGCAT","Handler Started" + MainActivity.class.getSimpleName() + times);
     }
 
 

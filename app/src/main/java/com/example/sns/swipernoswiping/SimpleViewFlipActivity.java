@@ -39,7 +39,6 @@ public class SimpleViewFlipActivity extends AppCompatActivity {
 
         delayMilliSeconds = getResources().getInteger(R.integer.inactivity_timeout);
 
-
         final EasyFlipView easyFlipView = (EasyFlipView) findViewById(R.id.easyFlipView2);
         easyFlipView.setFlipDuration(1000);
         easyFlipView.setFlipEnabled(true);
@@ -93,6 +92,7 @@ public class SimpleViewFlipActivity extends AppCompatActivity {
         public void onClick(View view) {
 //          Toast.makeText(SimpleViewFlipActivity.this, "Front Card", Toast.LENGTH_SHORT).show();
             easyFlipView.flipTheView();
+
         }
         });
 
@@ -101,6 +101,7 @@ public class SimpleViewFlipActivity extends AppCompatActivity {
             public void onClick(View view) {
             Intent intent = new Intent(SimpleViewFlipActivity.this, MainActivity.class);
             startActivity(intent);
+
 
 
             }
@@ -129,11 +130,23 @@ public class SimpleViewFlipActivity extends AppCompatActivity {
         super.onUserInteraction();
         stopHandler();//stop first and then start
         startHandler();
+        Log.i("LOGCAT","On User Interaction " + SimpleViewFlipActivity.class.getSimpleName());
+
     }
+
+    @Override
+    protected void onPause(){
+        super.onPause();
+        stopHandler();
+    }
+
     public void stopHandler() {
+
         handler.removeCallbacks(runnable);
+        Log.i("LOGCAT","Handler Stopped" + SimpleViewFlipActivity.class.getSimpleName());
     }
     public void startHandler() {
         handler.postDelayed(runnable, delayMilliSeconds); //for 5 minutes
+        Log.i("LOGCAT","HandlerStarted " + SimpleViewFlipActivity.class.getSimpleName());
     }
 }

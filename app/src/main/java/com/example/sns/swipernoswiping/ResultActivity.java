@@ -5,6 +5,7 @@ import android.content.pm.ActivityInfo;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -37,6 +38,8 @@ public class ResultActivity extends AppCompatActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         setContentView(R.layout.activity_result);
 
+
+
         handler = new Handler();
         runnable = new Runnable() {
             @Override
@@ -50,6 +53,8 @@ public class ResultActivity extends AppCompatActivity {
         };
 
         delayMilliseconds = getResources().getInteger(R.integer.inactivity_timeout);
+
+        startHandler();
 
         Intent in = getIntent();
         Bundle b = in.getExtras();
@@ -147,11 +152,19 @@ public class ResultActivity extends AppCompatActivity {
         super.onUserInteraction();
         stopHandler();//stop first and then start
         startHandler();
+
+    }
+    @Override
+    protected void onPause(){
+        super.onPause();
+        stopHandler();
     }
     public void stopHandler() {
         handler.removeCallbacks(runnable);
+        Log.i("LOGCAT", "Handler Stopped " + ResultActivity.class.getSimpleName());
     }
     public void startHandler() {
         handler.postDelayed(runnable, delayMilliseconds); //for 5 minutes
+        Log.i("LOGCAT","Handler Started " + ResultActivity.class.getSimpleName());
     }
 }
